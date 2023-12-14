@@ -3,6 +3,7 @@ const authRoute = require("../files/auth/auth.route")
 const photoRoute = require("../files/photo/photo.route")
 
 const notificationRoute = require("../files/notification/notification.route")
+const adminRoute = require("../files/admin/admin.routes")
 
 const routes = (app) => {
   const base_url = "/api/v1"
@@ -11,6 +12,7 @@ const routes = (app) => {
   app.use(`${base_url}/auth`, authRoute)
   app.use(`${base_url}/notification`, notificationRoute)
   app.use(`${base_url}/photo`, photoRoute)
+  app.use(`${base_url}/admin`, adminRoute)
 }
 
 module.exports = routes

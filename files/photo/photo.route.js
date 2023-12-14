@@ -1,7 +1,7 @@
 const { uploadManager } = require("../../utils/multer")
 const { checkSchema } = require("express-validator")
 const photoRoute = require("express").Router()
-const { isAuthenticated } = require("../../utils")
+const { isAuthenticated, adminVerifier } = require("../../utils")
 const { validate } = require("../../validations/validate")
 const {
   createPhotoController,
@@ -14,11 +14,13 @@ const {
 
 photoRoute.use(isAuthenticated)
 
+photoRoute.route("/").get(getPhotoController)
+
+photoRoute.use(adminVerifier)
+
 photoRoute
   .route("/")
   .post(uploadManager("photoManager").single("photo"), createPhotoController)
-
-photoRoute.route("/").get(getPhotoController)
 
 photoRoute
   .route("/:id")

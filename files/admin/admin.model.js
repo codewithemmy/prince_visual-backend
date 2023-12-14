@@ -6,22 +6,6 @@ const adminSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    bio: {
-      type: String,
-      required: true,
-    },
-    introduction: {
-      type: String,
-      required: true,
-    },
-    jobTitle: {
-      type: String,
-      required: true,
-    },
-    alternateEmail: {
-      type: String,
-      required: true,
-    },
     email: {
       type: String,
       required: true,
