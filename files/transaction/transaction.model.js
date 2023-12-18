@@ -15,6 +15,7 @@ const TransactionSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    bookDate: { type: Date },
     channel: {
       type: String,
       required: true,

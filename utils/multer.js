@@ -9,16 +9,12 @@ cloudinary.config({
   api_secret: config.CLOUDINARY_API_SECRET,
 })
 
-const width = 450
-const height = 330
-
 const uploadManager = (destination) => {
   return multer({
     storage: new CloudinaryStorage({
       cloudinary: cloudinary,
       params: {
         folder: `PrinceVisual/${destination}`,
-        transformation: [{ width: width, height: height }],
       },
     }),
   })

@@ -63,7 +63,7 @@ class PhotoService {
   }
 
   static async deletePhoto(photoId) {
-    const photo = await PhotoRepository.updatePhotoById(photoId)
+    const photo = await PhotoRepository.deletePhotoById(photoId)
 
     if (!photo) return { success: false, msg: PhotoFailure.DELETE }
 

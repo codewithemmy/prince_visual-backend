@@ -48,7 +48,7 @@ class PhotoRepository {
       { $set: { ...params } }
     )
   }
-  static async updatePhotoById(id) {
+  static async deletePhotoById(id) {
     return await Photo.findByIdAndDelete({
       _id: new mongoose.Types.ObjectId(id),
     })
